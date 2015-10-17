@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>The Second Workshop on the LLVM Compiler Infrastructure in HPC</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/main.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+
+      <header>
+        <h1>The Second Workshop on the LLVM Compiler Infrastructure in HPC</h1>
+        <p>Workshop held in conjunction with SC15 - Sunday, November 15, 2015 - Austin, Texas, USA</p>
+      </header>
+
+      <div id="banner">
+        <span id="logo"></span>
+
+        <a href="https://github.com/LLVM-HPC2-Workshop" class="button fork"><strong>View On GitHub</strong></a>
+      </div><!-- end banner -->
+
+    <div class="wrapper">
+      <nav>
+        <ul></ul>
+      </nav>
+      <section>
+        <h2>
+<a id="invited" class="anchor" href="#invited" aria-hidden="true"><span class="octicon octicon-link"></span></a>Invited Talks</h2>
+
+<a class="anchor" name="wong" aria-hidden="true"></a>
+<h3>Keynote: <i>TBA</i></h3>
+<h4>Michael Wong</h4>
+
+<p><i>TBA</i></p>
+
+<a class="anchor" name="intel" aria-hidden="true"></a>
+<h3>Moving Forward with OpenMP Implementation in Clang and LLVM</h3>
+<h4><i>TBA (Intel OpenMP team)</i></h4>
+
+<p>In collaboration with colleagues from the LLVM community and the "OpenMP in Clang/LLVM" team, we have been developing and contributing to the support of the OpenMP language in Clang and LLVM for over three years. In this talk we outline the progress of this support up to what we have today: from the initial steps presented over two years ago which also announced the open-sourcing of Intel's OpenMP runtime library for use by LLVM, the milestone and directions discussed last year, through the full implementation of the OpenMP 3.1 standard in Clang 3.7 announced earlier this year, to the current support of the OpenMP 4.0 standard and plans for supporting the upcoming OpenMP 4.1 standard.</p>
+
+<a class="anchor" name="doerfert" aria-hidden="true"></a>
+<h3><i>TBA (Polly)</i></h3>
+<h4>Johannes Doerfert</h4>
+
+<p>Polly is a fully-automatic polyhedral optimizer that provides precise memory access analyses and implements on top of them advanced loop optimizations. Integrated in the LLVM compiler framework, Polly can be used as an optimizer, a sophisticated static analyzer but also to perform custom transformations on the input loop nests.</p>
+
+<p>In this talk we focus on Polly's new optimistic assumption infrastructure that allows precise analysis despite irregularities that cannot be disproved statically. The concept of an optimistic assumption is introduced and instantiated to resolve otherwise blocking issues such as exception handling code, infinite loops, integer wrapping, aliasing or out-of-bound memory accesses. We discuss how such assumptions can be described in general, how Polly can collect assumptions, how redundant assumptions are eliminated and how a (close to) minimal run-time check to verify them is generated.</p>
+
+<a class="anchor" name="winter" aria-hidden="true"></a>
+<h3>Leveraging the LLVM JIT Compiler in Lattice QCD Simulation</h3>
+<h4>Frank Winter</h4>
+
+<p><i>TBA</i></p>
+        <h2>
+<a id="contributed" class="anchor" href="#contributed" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contributed Papers</h2>
+
+<a class="anchor" name="hayashi" aria-hidden="true"></a>
+<h3>LLVM-based Communication Optimizations for PGAS Programs</h3>
+<h4>Akihiro Hayashi, Jisheng Zhao, Michael Ferguson, and Vivek Sarkar</h4>
+
+<p>While Partitioned Global Address Space (PGAS) programming languages such as UPC/UPC++, CAF, Chapel and X10 provide high-level programming models for facilitating large-scale distributed-memory parallel programming, it is widely recognized that compiler analysis and optimization for these languages has been very limited, unlike the optimization of SMP models such as OpenMP.  One reason for this limitation is that current optimizers for PGAS programs are specialized to different languages. This is unfortunate since communication optimization is an important class of compiler optimizations for PGAS programs running on distributed-memory platforms, and these optimizations need to be performed more widely. Thus, a more effective approach would be to build a language-independent and runtime-independent compiler framework for optimizing PGAS programs so that new communication optimizations can be leveraged by different languages.</p>
+
+<p>To address this need, we introduce an LLVM-based (Low Level Virtual Machine) communication optimization framework. Our compilation system leverages existing optimization passes and introduces new PGAS language-aware runtime dependent/independent passes to reduce communication overheads. Our experimental results show an average performance improvement of 3.5x and 3.4x on 64-nodes of a Cray XC30TM supercomputer and 32-nodes of a Westmere cluster respectively, for a set of benchmarks written in the Chapel language. Overall, we show that our new LLVM-based compiler optimization framework can effectively improve the performance of PGAS programs.</p>
+
+<a class="anchor" name="khaldi" aria-hidden="true"></a>
+<h3>LLVM Parallel Intermediate Representation: Design and Evaluation using OpenSHMEM Communications</h3>
+<h4>Dounia Khaldi, Pierre Jouvelot, Francois Irigoin, Corinne Ancourt, and Barbara Chapman</h4>
+
+<p>We extend the LLVM intermediate representation (IR) to make it a parallel IR (LLVM PIR), which is a necessary step for introducing simple and generic parallel code optimization into LLVM. LLVM is a modular compiler that can be efficiently and easily used for static analysis, static and dynamic compilation, optimization, and code generation. Being increasingly used to address high-performance computing abstractions and hardware, LLVM will benefit from the ability to handle parallel constructs at the IR level. We use SPIRE, an incremental methodology for designing the intermediate representations of compilers that target parallel programming languages, to design LLVM PIR.</p>
+
+<p>Languages and libraries based on the Partitioned Global Address Space (PGAS) programming model have emerged in recent years with a focus on addressing the programming challenges for scalable parallel systems. Among these, OpenSHMEM is a library that is the culmination of a standardization effort among many implementers and users of SHMEM; it provides a means to develop light-weight, portable, scalable applications based on the PGAS programming model. As a use case for validating our LLVM PIR proposal, we show how OpenSHMEM one-sided communications can be optimized via our implementation of PIR into the LLVM compiler; we illustrate two important optimizations for such operations using loop tiling and communication vectorization.</p>
+
+<a class="anchor" name="droste" aria-hidden="true"></a>
+<h3>MPI-Checker - Static Analysis for MPI</h3>
+<h4>Alexander Droste, Michael Kuhn, and Thomas Ludwig</h4>
+
+<p>This paper presents MPI-Checker, a static analysis checker to verify the correct usage of the MPI API in C and C++ code, based on Clang’s Static Analyzer. The checker works with path-sensitive as well as with non-path-sensitive analysis which is purely based on information provided by the abstract syntax tree representation of source code. MPI-Checker’s path-sensitive checks verify aspects of nonblocking communication, based on the usage of MPI requests, which are tracked by a symbolic representation of their memory region in the course of symbolic execution. Usage of double nonblocking calls without intermediate wait, nonblocking calls without a matching wait and waiting for a request that was never used by a nonblocking call is currently detected by the checker. AST-based checks verify correct type usage in MPI functions. Further, experimental support to verify if point-to-point function calls have a matching partner or lead to a deadlock is provided. In context of LLVM, each check except the checks regarding correct type usage, provides a completely new addition to the architecture. MPI-Checker works MPI implementation independent. No assumptions about implementation details of an MPI library are made in any of the checks. MPI-Checker introduces only negligible overhead on top of the Clang Static Analyzer core and is able to detect critical bugs in real world codebases, which is shown by evaluating analysis results for the open source projects AMG2013, CombBLAS and OpenFFT.</p>
+
+<a class="anchor" name="denny" aria-hidden="true"></a>
+<h3>FITL: Extending LLVM for the Translation of Fault-Injection Directives</h3>
+<h4>Joel Denny, Seyong Lee, and Jeffrey Vetter</h4>
+
+<p>The frequency of hardware errors in HPC systems continues to grow as system designs evolve toward exascale. Tolerating these errors efficiently and effectively will require software-based resilience solutions. With this requirement in mind, recent research has increasingly employed LLVM-based tools to simulate transient hardware faults in order to study the resilience characteristics of specific applications. However, such tools require researchers to configure their experiments at the level of the LLVM intermediate representation (LLVM IR) rather than at the source level of the applications under study. In this paper, we present FITL1 (Fault-Injection Toolkit for LLVM), a set of LLVM extensions to which it is straightforward to translate source-level pragmas that specify fault injection. While we have designed FITL not to be tied to any particular compiler front end or high-level language, we also describe how we have extended our OpenARC compiler to translate a novel set of fault-injection pragmas for C to FITL. Finally, we present several resilience studies we have conducted using FITL, including a comparison with a source-level fault injector we have built as part of OpenARC. 
+</p>
+
+<a class="anchor" name="bertolli" aria-hidden="true"></a>
+<h3>Integrating GPU Support for OpenMP Offloading Directives into Clang</h3>
+<h4>Carlo Bertolli, Samuel Antao, Gheorghe-Theodor Bercea, Arpith Jacob, Alexandre Eichenberger, Tong Chen, Zehra Sura, Hyojin Sung, Georgios Rokos, David Appelhans, and Kevin O'Brien</h4>
+
+<p>The LLVM community is currently developing OpenMP 4.1 support, consisting of software improvements for Clang and new runtime libraries. OpenMP 4.1 includes offloading constructs that permit execution of user selected regions on generic devices, external to the main host processor. This paper describes our ongoing work towards delivering support for OpenMP offloading constructs for the OpenPower system into the LLVM compiler infrastructure. We previously introduced a design for a control loop scheme necessary to implement the OpenMP generic offloading model on NVIDIA GPUs. In this paper we show how we integrated the complexity of the control loop into Clang by limiting its support to OpenMP-related functionality. We also synthetically report the results of performance analysis on benchmarks and a complex application kernel. We show an optimization in the Clang code generation scheme for specific code patterns, alternative to the control loop, which delivers improved performance.</p>
+
+<a class="anchor" name="ramkrishnan" aria-hidden="true"></a>
+<h3>SKA - Static Kernel Analysis using LLVM IR</h3>
+<h4>Kartik Ramkrishnan, Ben Bergen, and Justin Tripp</h4>
+
+<p>We propose to fundamentally change the way in which application developers write and optimize their codes by introducing a new stage to the development process that provides feedback both on the transformations performed by the compiler and expected execution for a given architecture through the simulated execution of compiler-optimized assembly output. Additionally, we propose to provide HPC system designers and architects with a tool that will give them a new predictive capability for evaluating and selecting architectures for future procurements. The Static Kernel Analyzer (SKA) provides both of these functionalities by simulating LLVM IR (low-level virtual machine intermediate representation) on a virtual architecture specification and generating architecture specific code-metrics and pipeline information.  In this work, we add register allocation support to SKA in order to improve its fidelity. Our results show that the addition of register management can realize a 5-10 % improvement in SKA’s fidelity across four different architectures on a compute intensive workload.</p>
+
+<a class="anchor" name="lam" aria-hidden="true"></a>
+<h3>Numba: A LLVM-based Python JIT Compiler</h3>
+<h4>Siu Kwan Lam, Antoine Pitrou, and Stanley Seibert</h4>
+
+<p>Dynamic, interpreted languages, like Python, are attractive for domain-experts and scientists experimenting with new ideas. However, the performance of the interpreter is often a barrier when scaling to larger data sets. This paper presents a just-in-time compiler for Python that focuses in scientific and array-oriented computing. Starting with the simple syntax of Python, Numba compiles a subset of the language into efficient machine code that is comparable in performance to a traditional compiled language. In addition, we share our experience in building a JIT compiler
+using LLVM.</p>
+
+      </section>
+      <footer>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
