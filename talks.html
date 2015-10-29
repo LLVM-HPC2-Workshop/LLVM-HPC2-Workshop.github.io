@@ -36,10 +36,12 @@
 <a id="invited" class="anchor" href="#invited" aria-hidden="true"><span class="octicon octicon-link"></span></a>Invited Talks</h2>
 
 <a class="anchor" name="wong" aria-hidden="true"></a>
-<h3>Keynote: <i>TBA</i></h3>
+<h3>Keynote: The Future of GPU/Accelerator Programming Models</h3>
 <h4>Michael Wong</h4>
 
-<p><i>TBA</i></p>
+<p>GPU/Accelerator computing looks to be here to stay. Whether it is a flash in the pan or not, data parallelism is never going to be stale, especially for high-performance computing. The good news is that Clang 3.7 has OpenMP 3.1 support through a collaborative effort between many institutions, and Clang 3.8 or later will have some form of of support for OpenMP 4 accelerators that targets many different devices, including Intel Xeon Phi and NVIDIA GPUs. Clang won't be the only compiler to have support for the OpenMP target model, as GCC 5+ will also support OpenMP target offload, as well as OpenACC, enabling some friendly competitive comparisons.</p>
+
+<p>The OpenMP model was designed to fit all possible forms of accelerators. However, in a changing world where discrete GPUs are transitioning into accelerated processing units (APUs), and being combined with various forms of high-bandwidth memory (HBM), is the OpenMP model, or even the OpenACC model, the best model? Should we begin programming future devices with a new programming model that ignores the "legacy" discrete systems and aims for the future? I'll contrast the OpenMP design with the emerging C++ design, which at this point is mostly just a set of design goals, and show where we might be going in five years with an accelerator model that is appropriate for the future.</p>
 
 <a class="anchor" name="intel" aria-hidden="true"></a>
 <h3>Moving Forward with OpenMP Implementation in Clang and LLVM</h3>
